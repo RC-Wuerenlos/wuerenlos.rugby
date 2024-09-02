@@ -19,9 +19,12 @@ menu:
     - name: Teams
       pageRef: /teams
       weight: 1
+    - name: Schedule
+      pageRef: /seasons
+      weight: 2
     - name: News
       pageRef: /news
-      weight: 2
+      weight: 3
     - name: Search
       weight: 4
       params:
