@@ -1,0 +1,38 @@
+{{ $pages := .pages }}
+
+<table>
+<tr>
+<th>Date</th>
+<th>Kickoff</th>
+<th>Fixture</th>
+<th>Result</th>
+<th>Venue</th>
+<th>League</th>
+</tr>
+
+{{ range $pages }}
+<tr>
+    <td>{{ .Params.Kickoff | time.Format ":date_long" }}</td>
+    <td>{{ .Params.Kickoff | time.Format ":time_short" }}</td>
+    <td><a href="{{ .RelPermalink }}">{{ .Title }}</td>
+
+    <td>
+    {{ if not (time.Now.Before (time.AsTime .Params.Kickoff)) }}
+    {{ .Params.Homescore }}:{{ .Params.Guestscore }}
+    {{ end }}
+    </td>
+
+    <td>
+    {{ range .GetTerms "venues" }}
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ end }}
+    </td>
+
+    <td>
+    {{ range .GetTerms "leagues" }}
+    <a href="{{ .RelPermalink }}">{{ upper .Title }}</a>
+    {{ end }}
+    </td>
+</tr>
+{{ end }}
+</table>

@@ -1,0 +1,70 @@
+{{ define "main" }}
+  <div class='hx-mx-auto hx-flex {{ partial "utils/page-width" . }}'>
+    {{ partial "sidebar.html" (dict "context" .) }}
+    {{ partial "toc.html" . }}
+    <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
+        {{ partial "breadcrumb.html" . }}
+        <div class="content">
+          <h1>{{ .Title }}</h1>
+
+          <div class="hx-flex hx-flex-wrap hx-gap-2">
+          {{ range .GetTerms "positions" }}
+          <a href="{{ .RelPermalink }}" class="hx-rounded-xl hx-border hx-px-2 hx-py-.5 hx-text-sm" style="text-decoration: none;" >{{ .Title }}</a>
+          {{ end }}
+          </div>
+
+          {{ .Content }}
+
+          {{ $playerId := .File.ContentBaseName }}
+          {{ $playedIn := slice }}
+
+          {{ range where (site.RegularPages) "Type" "fixtures" }}
+            {{ $fixture := . }}
+            {{ range .Params.Teams }}
+              {{ $team := .name }}
+              {{ range .players }}
+                {{ if eq .player $playerId }}
+                  {{ $playedIn = $playedIn | append (dict "fixture" $fixture "position" .position "team" $team) }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+
+          {{ $fixturecount := len $playedIn }}
+          {{ if $fixturecount }}
+            <h2>Fixtures</h2>
+            <table>
+              <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Fixture</th>
+                <th>Position</th>
+                <th>Team</th>
+              </tr>
+
+            {{ range $playedIn }}
+              {{ $fixture := .fixture }}
+              {{ $position := .position }}
+              {{ $team := .team }}
+                
+                <tr>
+                  <td>{{ $fixturecount }}</td>
+                  <td>{{ $fixture.Params.Kickoff | time.Format ":date_long" }}</td>
+                  <td><a href="{{ $fixture.RelPermalink }}">{{ $fixture.Params.Title }}</a></td>
+                  <td>{{ $position }}</td>
+                  <td>{{ $team }}</td>
+                </tr>
+                {{ $fixturecount = sub $fixturecount 1 }}
+              {{ end }}
+            </table>
+          {{ end }}
+
+        </div>
+        {{ partial "components/last-updated.html" . }}
+        {{ partial "components/pager.html" . }}
+        {{ partial "components/comments.html" . }}
+      </main>
+    </article>
+  </div>
+{{ end }}
