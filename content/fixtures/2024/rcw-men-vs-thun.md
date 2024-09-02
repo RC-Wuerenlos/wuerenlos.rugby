@@ -6,12 +6,12 @@ draft: true
 kickoff: "2024-06-02T15:00:00+02:00"
 seasons: ["2024-25"]
 hometeams: ["thun"]
-leagues: ["lnc"]
-venue: ""
+leagues: "lnc"
+venues: ["thun"]
 homescore: 0
 guestscore: 0
 teams:
-  - name: "men"
+  - name: "wuerenlos-men"
     home: false
     players:
       - player: "christian-roth"

@@ -1,7 +1,9 @@
 ---
-title: "Training"
+title: "Würenlos Ladies"
 date: 2024-09-01T10:33:35+02:00
 draft: true
+
+weight: 2
 ---
 
 

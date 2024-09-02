@@ -8,9 +8,12 @@
           <h1>{{ .Title }}</h1>
           {{ .Content }}
 
-          {{ partial "fixturelist" (dict "pages" .Pages) }}
+          {{ range .Pages.GroupByParam "leagues" }}
 
-
+            <h2>{{ .Key }}</h2>
+            {{ partial "fixturelist" (dict "pages" .Pages) }}
+          {{ end }}
+        
         </div>
         <div class="hx-mt-16"></div>
         {{ partial "components/last-updated.html" . }}
