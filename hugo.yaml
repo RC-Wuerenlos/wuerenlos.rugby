@@ -19,7 +19,7 @@ menu:
     - name: Teams
       pageRef: /teams
       weight: 1
-    - name: Schedule
+    - name: Games
       pageRef: /seasons
       weight: 2
     - name: News
@@ -29,6 +29,23 @@ menu:
       weight: 4
       params:
         type: search
+  sidebar:
+    - name: Navigate
+      params:
+        type: separator
+      weight: 1
+    - name: "Club"
+      pageRef: "/club"
+      weight: 2
+    - name: "Teams"
+      pageRef: "/teams"
+      weight: 3
+    - name: "Games"
+      pageRef: "/fixtures"
+      weight: 4
+    - name: "News"
+      pageRef: "/news"
+      weight: 5
 
 taxonomies:
   tag: tags
