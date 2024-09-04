@@ -5,6 +5,7 @@ type: docs
 draft: true
 
 weight: 2
+image: "/images/uploads/wuerenlos.png"
 ---
 
 
