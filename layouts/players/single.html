@@ -53,7 +53,11 @@
                   <td>{{ $fixture.Params.Kickoff | time.Format ":date_long" }}</td>
                   <td><a href="{{ $fixture.RelPermalink }}">{{ $fixture.Params.Title }}</a></td>
                   <td>{{ $position }}</td>
-                  <td>{{ $team }}</td>
+                  <td>
+                    {{ with site.GetPage (printf "/teams/%s" $team) }}
+                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    {{ end }}
+                  </td>
                 </tr>
                 {{ $fixturecount = sub $fixturecount 1 }}
               {{ end }}
