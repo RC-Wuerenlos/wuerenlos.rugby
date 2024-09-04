@@ -1,11 +1,7 @@
-#backend:
-#  name: github
-#  repo: RC-Wuerenlos/wuerenlos.rugby
-
-local_backend: true
-
 backend:
-  name: test-repo
+  name: github
+  repo: rc-wuerenlos/wuerenlos.rugby
+
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
