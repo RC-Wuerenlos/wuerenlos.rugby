@@ -1,24 +1,48 @@
 {{ define "main" }}
-  <div class='hx-mx-auto hx-flex {{ partial "utils/page-width" . }}'>
-    {{ partial "sidebar.html" (dict "context" .) }}
-    {{ partial "toc.html" . }}
-    <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-      <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
-        {{ partial "breadcrumb.html" . }}
-        <div class="content">
-          <h1>{{ .Title }}</h1>
-          <time datetime="{{ .Params.Kickoff }}">{{ .Params.Kickoff | time.Format "Monday, 2 Jan 2006 - 15:04" }}</time>
+<div class='hx-mx-auto hx-flex {{ partial "utils/page-width" . }}'>
+  {{ partial "sidebar.html" (dict "context" .) }}
+  {{ partial "toc.html" . }}
+  <article
+    class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
+      {{ partial "breadcrumb.html" . }}
+      <div class="content">
+        <h1>{{ .Title }}</h1>
+        <time datetime="{{ .Params.Kickoff }}">{{ .Params.Kickoff | time.Format "Monday, 2 Jan 2006 - 15:04" }}</time>
 
-          <div class="hx-grid hx-justify-center">
-              <span style="font-size: 3.75rem;">{{ .Params.Homescore }}:{{ .Params.Guestscore }}</span>
+        <div class="hx-flex hx-justify-between hx-items-center">
+
+          <div>
+            {{ $page := . }}
+            {{ range where .Params.Teams ".home" true }}
+            {{ with $page.GetPage (printf "/teams/%s.md" .name) }}
+            <a href="{{ .RelPermalink }}">
+              <img style="max-height: 3.75rem; margin: 0" class="hx-text-xs" src="{{ .Params.Image }}" alt="{{ .Title  }}">
+            </a>
+            {{ end }}
+            {{ end }}
           </div>
 
-          {{ .Content }}
+          <div style="font-size: 3.75rem;">{{ .Params.Homescore }}:{{ .Params.Guestscore }}</div>
+
+          <div>
+            {{ $page := . }}
+            {{ range where .Params.Teams ".home" false }}
+            {{ with $page.GetPage (printf "/teams/%s.md" .name) }}
+            <a href="{{ .RelPermalink }}">
+              <img style="max-height: 3.75rem; margin: 0" class="hx-text-xs" src="{{ .Params.Image }}" alt="{{ .Title  }}">
+            </a>
+            {{ end }}
+            {{ end }}
+          </div>
         </div>
-        {{ partial "components/last-updated.html" . }}
-        {{ partial "components/pager.html" . }}
-        {{ partial "components/comments.html" . }}
-      </main>
-    </article>
-  </div>
+
+        {{ .Content }}
+      </div>
+      {{ partial "components/last-updated.html" . }}
+      {{ partial "components/pager.html" . }}
+      {{ partial "components/comments.html" . }}
+    </main>
+  </article>
+</div>
 {{ end }}
