@@ -1,4 +1,4 @@
-baseURL: https://wuerenlos.rugby/
+baseURL: https://rcw-dev.sekthor.ch/
 languageCode: en-us
 title: RCW
 
@@ -46,6 +46,9 @@ menu:
     - name: "News"
       pageRef: "/news"
       weight: 5
+    - name: "Sponsors"
+      pageRef: "/sponsors"
+      weight: 6
 
 taxonomies:
   tag: tags
