@@ -1,25 +1,51 @@
 {{ $pages := .pages }}
 
 <table>
+
 <tr>
 <th>Date</th>
 <th>Kickoff</th>
 <th>Fixture</th>
+<th>H</th>
 <th>Result</th>
+<th>G</th>
 <th>Venue</th>
-<th>League</th>
 </tr>
 
 {{ range $pages }}
-<tr>
+{{ $currentPage := . }}
+<tr class="hx-text-sm">
     <td>{{ .Params.Kickoff | time.Format ":date_long" }}</td>
     <td>{{ .Params.Kickoff | time.Format ":time_short" }}</td>
     <td><a href="{{ .RelPermalink }}">{{ .Title }}</td>
 
-    <td>
+    <td class="hx-text-center" style="padding: 0 .5em">
+       {{ range where .Params.Teams ".home" true }}
+        {{ $page := printf "/teams/%s.md" .name }}
+        {{ with $currentPage.GetPage $page }}
+            <a href="{{ .RelPermalink }}">
+                <img style="max-height: 2em; margin: 0;" src="{{ .Params.Image }}" slt="">
+            </a>
+        {{ end }}
+    {{ end }} 
+    </td>
+
+    <td class="hx-text-center">
     {{ if not (time.Now.Before (time.AsTime .Params.Kickoff)) }}
-    {{ .Params.Homescore }}:{{ .Params.Guestscore }}
+        {{ .Params.Homescore }}:{{ .Params.Guestscore }}
     {{ end }}
+    </td>
+
+    <td class="hx-text-center hx-p-0" style="padding: 0 .5em">
+    {{ range where .Params.Teams ".home" false }}
+        {{ $page := printf "/teams/%s.md" .name }}
+        {{ with $currentPage.GetPage $page }}
+            <a href="{{ .RelPermalink }}">
+            <img style="max-height: 2em; margin: 0" src="{{ .Params.Image }}" slt="">
+            </a>
+        {{ end }}
+    {{ end }}
+
     </td>
 
     <td>
@@ -28,11 +54,6 @@
     {{ end }}
     </td>
 
-    <td>
-    {{ range .GetTerms "leagues" }}
-    <a href="{{ .RelPermalink }}">{{ upper .Title }}</a>
-    {{ end }}
-    </td>
 </tr>
 {{ end }}
 </table>

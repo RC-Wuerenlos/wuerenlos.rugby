@@ -15,6 +15,8 @@ teams:
     players:
       - player: "christian-roth"
         position: "scrumhalf"
+  - name: "bern-men"
+    home: true
 ---
 
 The final game of the season.

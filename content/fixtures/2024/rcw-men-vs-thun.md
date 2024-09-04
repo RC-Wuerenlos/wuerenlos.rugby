@@ -16,7 +16,7 @@ teams:
     players:
       - player: "christian-roth"
         position: "scrumhalf"
-  - name: "thun"
+  - name: "thun-men"
     home: true
     players:
 
