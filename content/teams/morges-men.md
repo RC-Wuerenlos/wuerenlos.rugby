@@ -5,5 +5,5 @@ draft: true
 type: docs
 sidebar:
   exclude: true
-image: ""
+image: "/images/uploads/morges.png"
 ---
