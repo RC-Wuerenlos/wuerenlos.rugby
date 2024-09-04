@@ -4,7 +4,7 @@ date: 2024-06-02T15:00:00+02:00
 draft: true
 
 kickoff: "2024-06-02T15:00:00+02:00"
-seasons: ["2024-25"]
+seasons: ["2023-24"]
 hometeams: ["thun"]
 leagues: "lnc"
 venues: ["thun"]
@@ -23,4 +23,3 @@ teams:
 ---
 
 The final game of the season.
-Hello

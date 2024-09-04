@@ -1,23 +1,20 @@
 ---
-title: 'Bern vs RCW Men'
-date: 2024-05-25T15:00:00+02:00
+title: 'Thun vs Würenlos XV'
+date: '2024-09-04T17:22:16+02:00'
 draft: true
 
-kickoff: "2024-05-25T15:00:00+02:00"
+kickoff: '2024-04-27T15:00:00+02:00'
 seasons: ["2023-24"]
-venues: ["bern"]
+venues: ["thun"]
 leagues: "lnc"
-homescore: 0
-guestscore: 0
+homescore: 34
+guestscore: 25
 teams:
   - name: "wuerenlos-men"
     home: false
     players:
       - player: "christian-roth"
         position: "scrumhalf"
-  - name: "bern-men"
+  - name: "thun-men"
     home: true
 ---
-
-The final game of the season.
-Hello
