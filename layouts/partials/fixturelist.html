@@ -24,7 +24,7 @@
         {{ $page := printf "/teams/%s.md" .name }}
         {{ with $currentPage.GetPage $page }}
             <a href="{{ .RelPermalink }}">
-                <img style="max-height: 2em; margin: 0;" src="{{ .Params.Image }}" slt="">
+                <img style="max-height: 2em; margin: 0;" src="{{ .Params.Image }}" alt="{{ .Title }}">
             </a>
         {{ end }}
     {{ end }} 
@@ -41,7 +41,7 @@
         {{ $page := printf "/teams/%s.md" .name }}
         {{ with $currentPage.GetPage $page }}
             <a href="{{ .RelPermalink }}">
-            <img style="max-height: 2em; margin: 0" src="{{ .Params.Image }}" slt="">
+            <img style="max-height: 2em; margin: 0" class="hx-text-xs" src="{{ .Params.Image }}" alt="{{ .Title  }}">
             </a>
         {{ end }}
     {{ end }}
