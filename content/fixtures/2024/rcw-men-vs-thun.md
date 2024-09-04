@@ -1,7 +1,7 @@
 ---
 title: 'Würenlos Men vs Thun'
 date: 2024-06-02T15:00:00+02:00
-draft: true
+draft: false
 
 kickoff: "2024-06-02T15:00:00+02:00"
 seasons: ["2023-24"]

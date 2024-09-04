@@ -1,7 +1,7 @@
 ---
 title: 'Würenlos XV vs Bern'
 date: '2024-09-04T17:25:37+02:00'
-draft: true
+draft: false
 
 kickoff: '2024-04-14T15:00:00+02:00'
 seasons: ["2023-24"]

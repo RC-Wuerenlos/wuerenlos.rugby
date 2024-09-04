@@ -1,7 +1,7 @@
 ---
 title: 'Christian Roth'
 date: 2024-08-21T20:40:53+02:00
-draft: true
+draft: false
 image: /uploads/images/christian-roth.png
 
 dob: "2024-08-21T20:40:53+02:00"

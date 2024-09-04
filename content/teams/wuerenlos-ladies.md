@@ -2,12 +2,14 @@
 title: "Würenlos Ladies"
 date: 2024-09-01T10:33:35+02:00
 type: docs
-draft: true
+draft: false
 
 weight: 2
 image: "/images/uploads/wuerenlos.png"
 ---
 
+
+## Summer Training
 
 | Weekday  | Location        | Start | End   |
 |:---------|:----------------|:------|:------|

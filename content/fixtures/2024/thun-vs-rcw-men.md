@@ -1,7 +1,7 @@
 ---
 title: 'Thun vs Würenlos XV'
 date: '2024-09-04T17:22:16+02:00'
-draft: true
+draft: false
 
 kickoff: '2024-04-27T15:00:00+02:00'
 seasons: ["2023-24"]

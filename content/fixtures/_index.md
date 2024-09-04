@@ -1,7 +1,7 @@
 ---
 title: "Fixtures"
 date: 2024-09-02T21:02:55+02:00
-draft: true
+draft: false
 ---
 
 This is a list of all official games Rugby Club Würenlos has fielded Teams for.

@@ -1,7 +1,7 @@
 ---
 date: '2024-09-04T17:02:18+02:00'
 title: 'Bellinzona Men'
-draft: true
+draft: false
 type: docs
 sidebar:
   exclude: true

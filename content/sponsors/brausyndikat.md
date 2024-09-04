@@ -1,7 +1,7 @@
 ---
 title: "Brausyndikat"
 date: 2024-09-02T20:34:39+02:00
-draft: true
+draft: false
 
 weight: 2
 active: true

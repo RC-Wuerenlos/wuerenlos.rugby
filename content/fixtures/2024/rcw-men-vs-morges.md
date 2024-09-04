@@ -1,7 +1,7 @@
 ---
 title: 'Würenlos XV vs Morges'
 date: '2024-09-04T17:16:48+02:00'
-draft: true
+draft: false
 
 kickoff: '2024-05-04T15:00:00+02:00'
 seasons: ["2023-24"]
