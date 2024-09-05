@@ -5,7 +5,7 @@ draft: false
 type: docs
 sidebar:
   exclude: true
-image: ""
+image: "/images/uploads/bellinzona.png"
 ---
 
 Formerly known as "Rugby Ticino"
